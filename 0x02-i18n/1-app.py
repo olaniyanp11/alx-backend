@@ -17,7 +17,7 @@ class Config():
     BABEL_DEFAULT_LOCALE to'en'
     BABEL_DEFAULT_TIMEZONE to 'UTC'
     """
-    
+
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
@@ -40,4 +40,3 @@ def index():
 
 if __name__ == "__main__":
     app.run()
-    

@@ -24,6 +24,10 @@ class Config(object):
 
 
 # app.config.from_object(Config)
+@app.route('/')
+def index():
+    """ the index page"""
+    return render_template('3-index.html')
 
 
 @babel.localeselector
@@ -32,11 +36,4 @@ def get_locale():
     return request.accept_languages.best_match(Config.LANGUAGES)
 
 
-@app.route('/')
-def index():
-    """ the index page"""
-    return render_template('3-index.html')
 
-
-if __name__ == "__main__":
-    app.run()

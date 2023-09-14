@@ -10,7 +10,7 @@ app = Flask(__name__)
 babel = Babel(app)
 
 
-class Config():
+class Config(object):
     """
     a config class to set
     LANGUAGES to ["en","fr"]
@@ -23,19 +23,19 @@ class Config():
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
-app.config.from_object(Config)
+# app.config.from_object(Config)
 
 
 @babel.localeselector
 def get_locale():
     """ checkes best conpatible language"""
-    return request.accept_languages.best_match(['en', 'fr'])
+    return request.accept_languages.best_match(Config.LANGUAGES)
 
 
 @app.route('/')
 def index():
     """ the index page"""
-    return render_template('0-index.html')
+    return render_template('3-index.html')
 
 
 if __name__ == "__main__":

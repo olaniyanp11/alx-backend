@@ -34,6 +34,3 @@ def index():
 def get_locale():
     """ checkes best conpatible language"""
     return request.accept_languages.best_match(Config.LANGUAGES)
-
-
-

@@ -34,6 +34,6 @@ def index():
 def get_locale():
     """ checkes best conpatible language"""
     locale = request.args.get('locale')
-    if locale:
-        return request.accept_languages.best_match(['fr'])
+    if locale in Config.LANGUAGES:
+        return locale
     return request.accept_languages.best_match(Config.LANGUAGES)
